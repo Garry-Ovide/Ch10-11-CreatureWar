@@ -33,43 +33,47 @@ public abstract class Creature
        max_hp = hp;
     }
     
-    
     /**
-     * Allows a creature to determine how much damage it is causing in this round of battle
-     * @return a value between 1 and str to be used to cause damage to another creature
+     * Calculate the damage caused by this creature during an attack.
+     *
+     * @return a random damage value between 1 and the creature's strength
      */
-    public int attack(){
-        // TODO: implement a damage method
-        return 0;
+    public int attack()
+    {
+        // Generate random damage between 1 and the creature's strength.
+        return Randomizer.nextInt(str);
     }
-    
     
     /**
      * Is this creature still capable of fighting?
-     * @return true when current hit point level is greater than zero
+     *
+     * @return true when current hit points are greater than zero
      */
-    public boolean isAlive() {
-        // TODO: implement a method to report if the creature yet lives
-        return false; //change this
+    public boolean isAlive()
+    {
+        // A creature is alive only when its health is above zero.
+        return hp > 0;
     }
     
     /**
-     * Is this creature knockedOut?
-     * @return true when current hit point level is less than or equal to zero
+     * Check whether this creature has been knocked out.
+     *
+     * @return true if the creature's hit points are zero or less
      */
-    public boolean isKnockedOut() {
-        //TODO: implement a method to report if the creature has been killed
-        return false; //change this
+    public boolean isKnockedOut()
+    {
+        // A creature is knocked out when it has no remaining health.
+        return hp <= 0;
     }
-    
     
     /**
-     * takeDamage receives a value for the amount of damage to subtract from 
-     * the current total of hit points
-     * @param damage value to remove from hit point count
+     * Reduce the creature's current hit points by the damage received.
+     *
+     * @param damage the amount of damage inflicted on the creature
      */
-    public void takeDamage(int damage) {
-        // TODO: implement this
+    public void takeDamage(int damage)
+    {
+        // Subtract the damage received from the creature's current health.
+        hp = hp - damage;
     }
-    
 }

@@ -17,26 +17,23 @@ public class Human extends Creature
     private static final int MIN_HUMAN_STR = 5;
 
     /**
-     * Constructor for objects of class Human -
-     * Note that the calling class does not need to know anything about the 
-     * requirements of human minimum and maximum values
-     * 
-     * The instantiating class asks for a Human and the human class is responsible for
-     * return a Human object with values in the appropriate range
-     * 
+     * Create a Human with randomly generated strength and hit points.
+     * Strength ranges from 5 to 20.
+     * Hit points range from 5 to 25.
      */
     public Human()
     {
-        // note how the class uses the static randomizer class to
-        // generate the values. This localizes the need to know 
-        // max and min values to this class only
-        // max-min is range of values
-        // range + min ensures that the values don't start at one.
+        // Generate strength within the allowed Human range.
+        // Subtract 1 from the minimum because Randomizer starts at 1.
+        // This ensures that both the minimum and maximum are included.
         super(
-            Randomizer.nextInt(MAX_HUMAN_STR-MIN_HUMAN_STR)+MIN_HUMAN_STR,
-            Randomizer.nextInt(MAX_HUMAN_HP-MIN_HUMAN_HP)+MIN_HUMAN_HP        
-        );
-          
+        Randomizer.nextInt(MAX_HUMAN_STR - MIN_HUMAN_STR + 1)
+            + MIN_HUMAN_STR - 1,
+
+        // Generate hit points within the allowed Human range.
+        Randomizer.nextInt(MAX_HUMAN_HP - MIN_HUMAN_HP + 1)
+            + MIN_HUMAN_HP - 1
+            );
     }
     
     

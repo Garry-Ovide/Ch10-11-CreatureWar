@@ -22,9 +22,11 @@ public class Elf extends Creature
      */
     public Elf()
     {
-        // Generate random strength between 5 and 18.
-        // Generate random hit points between 8 and 25.
-        // Pass both values to the Creature constructor.
+        // Generate random strength within the allowed Elf range.
+        // Generate random hit points within the allowed Elf range.
+        // Pass both randomly generated values to the Creature constructor.
+        // Subtract 1 from each minimum because Randomizer starts at 1.
+        // This ensures both minimum and maximum values are included.
         super(
         Randomizer.nextInt(MAX_ELF_STR - MIN_ELF_STR + 1)
             + MIN_ELF_STR - 1,

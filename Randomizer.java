@@ -27,10 +27,14 @@ public class Randomizer
      */
     public static int nextInt(int maxValue)
     {
-        if (rand == null) {
+        // Create the Random object only when the method is first called.
+        if (rand == null)
+        {
             rand = new Random();
         }
-        
-        return rand.nextInt(maxValue)+1;
+
+        // Generate a random number from 0 to maxValue - 1.
+        // Add 1 to make the range 1 through maxValue, inclusive.
+        return rand.nextInt(maxValue) + 1;
     }
 }

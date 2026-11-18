@@ -6,10 +6,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class BalrogTest.
+ * The BalrogTest class contains JUnit tests for the Balrog creature.
+ * It verifies that Balrogs start alive, take damage correctly,
+ * and generate double-attack damage within the allowed range,
+ * including their magical attack bonuses.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author Garry Ovide
+ * @version 2026-11-17
  */
 public class BalrogTest
 {

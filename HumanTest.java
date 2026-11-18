@@ -6,10 +6,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class HumanTest.
+ * The HumanTest class contains JUnit tests for the Human creature.
+ * It verifies that Humans start alive, take damage correctly,
+ * and generate attack damage within the allowed range.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author Garry Ovide
+ * @version 2026-11-17
  */
 public class HumanTest
 {
